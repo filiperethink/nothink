@@ -1,0 +1,41 @@
+.form__container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: var(--color-base);
+  padding: 20px;
+}
+
+.form__heading {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--color-main);
+  margin: 20px 0;
+}
+.form__input {
+  font-size: 15px;
+  font-weight: thin;
+  border: 1px solid var(--color-cold);
+  color: var(--color-main);
+  background-color: var(--color-base);
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  height: 40px;
+}
+.form__input:placeholder {
+  color: var(--color-main);
+}
+
+.form__editor {
+  width: 100%;
+}
+
+.form__actions {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 50%;
+}

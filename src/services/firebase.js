@@ -1,6 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  doc,
+  setDoc,
+} from "firebase/firestore";
+import { generateNoteId } from "../utils";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDBqW_YxpK1ZgDDSUqq7vA0JEa9a1vzbUk",
@@ -15,12 +22,24 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export const db = getFirestore(app);
+const db = getFirestore(app);
 
-const getCollections = async (collectionName = "notes") => {
-  const querySnapshot = await getDocs(collection(db, collectionName));
-  querySnapshot.forEach((doc) => {
-    console.log(doc.id, " => ", doc.data());
+const getNotes = async (collectionName = "notes") => {
+  const response = await getDocs(collection(db, collectionName));
+  return response.docs.map((doc) => {
+    return {
+      id: doc.id,
+      ...doc.data(),
+    };
   });
 };
-export { app, getCollections };
+
+const createNote = async (note) => {
+  const id = generateNoteId();
+  await setDoc(doc(db, "notes", id), {
+    title: note.title,
+    description: note.description,
+  });
+};
+
+export { getNotes, createNote };

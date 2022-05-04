@@ -1,0 +1,88 @@
+.btn__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-details);
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+  font-weight: thin;
+  font-size: 14px;
+}
+
+.btn__container:hover {
+  background-color: var(--color-base);
+}
+
+.btn__container_success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-details);
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+  font-weight: thin;
+  font-size: 14px;
+  background-color: var(--color-details);
+}
+
+.btn__container_info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-details);
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+  font-weight: thin;
+  font-size: 14px;
+  background-color: var(--color-cold);
+  color: var(--color-main);
+}
+
+.btn__container_basic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-main);
+  color: var(--color-cold);
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+  font-weight: thin;
+  font-size: 14px;
+}
+
+.btn__container_blocked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-semi-dark);
+  color: var(--color-base);
+  cursor: not-allowed;
+  border-radius: 5px;
+  border: 1px solid var(--color-main);
+  transition: background-color 0.3s ease;
+  font-weight: thin;
+  font-size: 14px;
+}
+.addIcon {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
