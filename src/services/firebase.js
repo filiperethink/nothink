@@ -39,6 +39,7 @@ const createNote = async (note) => {
   await setDoc(doc(db, "notes", id), {
     title: note.title,
     description: note.description,
+    created_at: Date.now(),
   });
 };
 

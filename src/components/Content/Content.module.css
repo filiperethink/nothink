@@ -1,13 +1,15 @@
 .content {
   display: flex;
+  width: 100%;
   flex: 1;
+  max-height: 100vh;
+  overflow: auto;
   background-color: var(--color-base);
 }
 
 .content__container {
-  display: flex;
+  width: 100%;
   padding: 40px 30px;
-  flex: 1;
   flex-direction: column;
 }
 
@@ -15,6 +17,7 @@
   font-size: 45px;
   font-weight: bold;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .content__description {
@@ -23,8 +26,15 @@
   color: var(--color-main);
 }
 
+.content_date {
+  font-size: 14px;
+  font-weight: thin;
+  color: var(--color-main);
+  margin-bottom: 20px;
+}
 .content__editor {
   width: 100%;
   height: auto;
+  margin-top: 20px;
   background-color: var(--color-main);
 }
