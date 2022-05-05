@@ -252,6 +252,7 @@ table {
 :root {
   --color-main: #212529;
   --color-details: #d3f13a;
+  --color-info: #f4cb50;
   --color-error: #f13a3a;
   --color-text: #4f5b67;
   --color-semi-dark: #777777;

@@ -6,6 +6,7 @@ import {
   getFirestore,
   doc,
   setDoc,
+  deleteDoc,
 } from "firebase/firestore";
 import { generateNoteId } from "../utils";
 
@@ -43,4 +44,8 @@ const createNote = async (note) => {
   });
 };
 
-export { getNotes, createNote };
+const deleteNote = async (id) => {
+  await deleteDoc(doc(db, "notes", id));
+};
+
+export { getNotes, createNote, deleteNote };

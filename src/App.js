@@ -5,7 +5,7 @@ import Content from "./components/Content/Content";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Form from "./components/Form/Form";
 
-import { createNote, getNotes } from "./services/firebase";
+import { createNote, deleteNote, getNotes } from "./services/firebase";
 
 function App() {
   const [isFormOpen, toggleForm] = useState(false);
@@ -19,13 +19,24 @@ function App() {
     fetchData();
   };
 
+  const handleDeleteNote = async (id) => {
+    await deleteNote(id);
+    toggleForm(false);
+    fetchData();
+  };
   const renderForm = () => {
     return <Form onCancel={() => toggleForm(false)} onSubmit={handleSubmit} />;
   };
 
   const renderContent = (notes) => {
     return (
-      <Content isFormOpen={isFormOpen} notes={notes} selectedId={selectedId} />
+      <Content
+        isFormOpen={isFormOpen}
+        isFetchingNotes={isFetchingNotes}
+        notes={notes}
+        selectedId={selectedId}
+        deleteNote={handleDeleteNote}
+      />
     );
   };
 
